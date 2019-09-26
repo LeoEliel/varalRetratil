@@ -2,11 +2,12 @@
 // Include config file
 require_once "config.php";
  
+
 // Define variables and initialize with empty values
-$dataPrevisao = $humiMax = $humiMin = chuvaProbab = "";
-$dataPrevisao_err = $humiMax_err = $humiMin_err = chuvaProbab_err = "";
+    $dataPrevisao = $humiMax = $humiMin = chuvaProbab = "";
+    $dataPrevisao_err = $humiMax_err = $humiMin_err = chuvaProbab_err = "";
  
-    // Define o ID do registro que ir+a ser atualizado
+    // Define o ID do registro que irá ser atualizado
     $id = 0;
 
     // Data Previsao
@@ -27,13 +28,14 @@ $dataPrevisao_err = $humiMax_err = $humiMin_err = chuvaProbab_err = "";
             $stmt->bindParam(":humiMax", $param_humiMax);
             $stmt->bindParam(":humiMin", $param_humiMin);
             $stmt->bindParam(":chuvaProbab", $param_chuvaProbab);
-            
+            $stmt->bindParam(":id", $param_id);
 
             // Set parameters
             $param_dataPrev = $dataPrevisao;
             $param_humiMax = $humiMax;
             $param_humiMin = $humiMin;
             $param_chuvaProbab = $chuvaProbab;
+            $param_id = $id;
 
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {

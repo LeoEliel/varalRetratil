@@ -34,12 +34,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Previsão do Tempo - Porto Velho</h2>
+                        <h2 class="pull-left">Varal Retrátil</h2>
+                        <h3 class="pull-left">Previsão do Tempo - Porto Velho</h3>
                         <a href="update.php" class="btn btn-success pull-right">Atualizar</a>
                     </div>
                     <?php
                     // Include config file
-                    require_once config.php;
+                    require_once "config.php";
 
                     // Attempt select query execution
                     $sql = "SELECT * FROM previsao";
@@ -66,9 +67,9 @@
                                 echo "<td>" . $row['chuvaProbab'] . "</td>";
                                 echo "<td>" . $row['cidade_idCity'] . "</td>";
                                 echo "<td>";
-                                echo "<a href='read.php?id=" . $row['id'] . "' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                echo "<a href='update.php?id=" . $row['id'] . "' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                echo "<a href='delete.php?id=" . $row['id'] . "' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                echo "<a href='read.php' title='Ver Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                echo "<a href='update.php' title='Atualizar Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                echo "<a href='delete.php' title='Deletar Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                 echo "</td>";
                                 echo "</tr>";
                             }
