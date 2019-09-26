@@ -34,12 +34,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Employee</a>
+                        <h2 class="pull-left">Previsão do Tempo - Porto Velho</h2>
+                        <a href="update.php" class="btn btn-success pull-right">Atualizar</a>
                     </div>
                     <?php
                     // Include config file
-                    require_once "config.php";
+                    require_once config.php;
 
                     // Attempt select query execution
                     $sql = "SELECT * FROM previsao";
@@ -77,7 +77,8 @@
                             // Free result set
                             unset($result);
                         } else {
-                            echo "<p class='lead'><em>Nemhum registro arquivado.</em></p>";
+                            // Caso não haja nenhum registro, a aplicação cria um, redirecionando para create.php.
+                            header("location: create.php");
                         }
                     } else {
                         echo "ERROR: Não foi possível executar a query SQL. " . $mysqli->error;
