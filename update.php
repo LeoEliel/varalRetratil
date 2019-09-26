@@ -4,8 +4,8 @@ require_once "config.php";
  
 
 // Define variables and initialize with empty values
-    $dataPrevisao = $humiMax = $humiMin = chuvaProbab = "";
-    $dataPrevisao_err = $humiMax_err = $humiMin_err = chuvaProbab_err = "";
+    $dataPrevisao = $humiMax = $humiMin = $chuvaProbab = "";
+    $dataPrevisao_err = $humiMax_err = $humiMin_err = $chuvaProbab_err = "";
  
     // Define o ID do registro que irá ser atualizado
     $id = 0;

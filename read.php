@@ -20,7 +20,6 @@
                 $chuvaProbab = $row["chuvaProbab"];
                 
             } else {
-                // URL doesn't contain valid id parameter. Redirect to error page
                 echo "erro";
                 exit();
             }

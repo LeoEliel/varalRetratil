@@ -4,8 +4,8 @@ require_once "config.php";
 
 
 // Define variables and initialize with empty values
-$dataPrevisao = $humiMax = $humiMin = chuvaProbab = "";
-$dataPrevisao_err = $humiMax_err = $humiMin_err = chuvaProbab_err = "";
+    $dataPrevisao = $humiMax = $humiMin = $chuvaProbab = "";
+    $dataPrevisao_err = $humiMax_err = $humiMin_err = $chuvaProbab_err = "";
 
     // Data Previsao
     $dataPrevisao = trim($_POST["dataPrevisao"]);// JSON da API
