@@ -54,7 +54,7 @@
                             echo "<th>Humid Max</th>";
                             echo "<th>Humid Min</th>";
                             echo "<th>Chuva(%)</th>";
-                            echo "<th>ID City</th>";
+                            echo "<th>Cidade</th>";
                             echo "</tr>";
                             echo "</thead>";
                             echo "<tbody>";
@@ -65,7 +65,7 @@
                                 echo "<td>" . $row['humiMax'] . "</td>";
                                 echo "<td>" . $row['humiMin'] . "</td>";
                                 echo "<td>" . $row['chuvaProbab'] . "</td>";
-                                echo "<td>" . $row['cidade_idCity'] . "</td>";
+                                echo "<td>" . $row['cidade'] . "</td>";
                                 echo "<td>";
                                 echo "<a href='read.php' title='Ver Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                 echo "<a href='update.php' title='Atualizar Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
