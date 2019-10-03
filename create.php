@@ -1,14 +1,15 @@
 <?php
 // Include config file
 require_once "config.php";
-
+require_once "json.php";
 
 // Define variables and initialize with empty values
 $dataPrevisao = $humiMax = $humiMin = $chuvaProbab = $cidade = "";
 $dataPrevisao_err = $humiMax_err = $humiMin_err = $chuvaProbab_err = $cidade_err = "";
 
 // Data Previsao
-$dataPrevisao = trim($_POST["dataPrevisao"]); // JSON da API
+echo $json[data[date_br]];
+//$dataPrevisao = trim($json[data[date_br]]); // JSON da API
 // Humiadade maxima
 $humiMax = trim($_POST["humiMax"]); // JSON da API
 // Humiadade m+inima
