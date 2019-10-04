@@ -12,11 +12,6 @@ $sql = "DELETE FROM previsao"; //  WHERE id = :id";
 // Set parameters
 //$param_id = $id;
 
-
-
-
-
-
     if ($stmt = pdo->query(sql)) {
         echo "<p> Registros apagados com sucesso, redirecionando para o Dashboard</p>";
         header("location: index.php");

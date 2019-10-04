@@ -7,22 +7,19 @@ require_once "json.php";
 $dataPrevisao = $humiMax = $humiMin = $chuvaProbab = $cidade = "";
 $dataPrevisao_err = $humiMax_err = $humiMin_err = $chuvaProbab_err = $cidade_err = "";
 
-// Define o ID do registro que irá ser atualizado
-$id = 0;
-
 // Data Previsao
-$dataPrevisao = trim($_POST["dataPrevisao"]); // JSON da API
-// Humiadade maxima
-$humiMax = trim($_POST["humiMax"]); // JSON da API
-// Humiadade m+inima
-$humiMin = trim($_POST["humiMin"]); // JSON da API
+$dataPrevisao = $json["data"][0]["date_br"]; 
+// Humidade maxima  
+$humiMax = $json["data"][0]["humidity"]["max"];
+// Humidade minima
+$humiMin = $json["data"][0]["humidity"]["min"];
 // Probabiliade de chuva
-$chuvaProbab = trim($_POST["chuvaProbab"]); // JSON da API
+$chuvaProbab = trim($json["data"][0]["rain"]["probability"]);
 //cidade
-$cidade = trim($_POST["cidade"]); // JSON da API
+$cidade = $json["name"]." ".$json["state"]; 
 
 // Prepare an update statement
-$sql = "UPDATE previsao SET dataPrevisao=:dataPrev, humiMax=:humiMax, humiMin=:humiMin, chuvaProbab=:chuvaProbab, cidade =:cidade WHERE id=:id";
+$sql = "UPDATE previsao SET dataPrevisao=:dataPrev, humiMax=:humiMax, humiMin=:humiMin, chuvaProbab=:chuvaProbab, cidade =:cidade";
 
 if ($stmt = $pdo->prepare($sql)) {
     // Bind variables to the prepared statement as parameters
@@ -31,7 +28,6 @@ if ($stmt = $pdo->prepare($sql)) {
     $stmt->bindParam(":humiMin", $param_humiMin);
     $stmt->bindParam(":chuvaProbab", $param_chuvaProbab);
     $stmt->bindParam(":cidade", $param_cidade);
-    $stmt->bindParam(":id", $param_id);
 
     // Set parameters
     $param_dataPrev = $dataPrevisao;
@@ -39,7 +35,6 @@ if ($stmt = $pdo->prepare($sql)) {
     $param_humiMin = $humiMin;
     $param_chuvaProbab = $chuvaProbab;
     $param_cidade = $cidade;
-    $param_id = $id;
 
     // Attempt to execute the prepared statement
     if ($stmt->execute()) {

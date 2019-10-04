@@ -1,23 +1,23 @@
 <?php
 // Include config file
-require_once "config.php";
 require_once "json.php";
+require_once "config.php";
 
+//var_dump($json["data"][0]["rain"]["probability"]);
 // Define variables and initialize with empty values
 $dataPrevisao = $humiMax = $humiMin = $chuvaProbab = $cidade = "";
 $dataPrevisao_err = $humiMax_err = $humiMin_err = $chuvaProbab_err = $cidade_err = "";
 
 // Data Previsao
-echo $json[data[date_br]];
-//$dataPrevisao = trim($json[data[date_br]]); // JSON da API
-// Humiadade maxima
-$humiMax = trim($_POST["humiMax"]); // JSON da API
-// Humiadade m+inima
-$humiMin = trim($_POST["humiMin"]); // JSON da API
+$dataPrevisao = $json["data"][0]["date_br"]; 
+// Humidade maxima  
+$humiMax = $json["data"][0]["humidity"]["max"];
+// Humidade minima
+$humiMin = $json["data"][0]["humidity"]["min"];
 // Probabiliade de chuva
-$chuvaProbab = trim($_POST["chuvaProbab"]); // JSON da API
+$chuvaProbab = trim($json["data"][0]["rain"]["probability"]);
 //cidade
-$cidade = trim($_POST["cidade"]); // JSON da API
+$cidade = $json["name"]." ".$json["state"]; 
 
 // Prepare an insert statement
 $sql = "INSERT INTO previsao (dataPrevisao, humiMax, humiMin, chuvaProbab, cidade) VALUES (:dataPrevisao, :humiMax, :humiMin, :chuvaProbab, :cidade)";
