@@ -20,11 +20,31 @@
         table tr td:last-child a {
             margin-right: 15px;
         }
+
+
+
+        #btn-atualizar {
+            margin-right: 5px;
+        }
+        #btn-deletar {
+            margin-left: 5px;
+        }
     </style>
     <script type="text/javascript">
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
         });
+
+
+
+        function showAlert(){
+            var x = confirm("Todos os dados serão apagados.\nProsseguir?");
+            if (x == true) {
+                
+            }else{
+                
+            }
+        }
     </script>
 </head>
 
@@ -34,9 +54,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Varal Retrátil</h2>
-                        <h3 class="pull-left">Previsão do Tempo - Porto Velho</h3>
-                        <a href="update.php" class="btn btn-success pull-right">Atualizar</a>
+                        <h2 class="pull-left">Varal Retrátil - Dashboard</h2>
+                        <a href="update.php" id="btn-atualizar" class="btn btn-success pull-right">Atualizar</a>                                               
                     </div>
                     <?php
                     // Include config file
@@ -66,11 +85,9 @@
                                 echo "<td>" . $row['humiMin'] . "</td>";
                                 echo "<td>" . $row['chuvaProbab'] . "</td>";
                                 echo "<td>" . $row['cidade'] . "</td>";
-                                echo "<td>";
-                                echo "<a href='read.php' title='Ver Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                echo "<a href='update.php' title='Atualizar Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                echo "<a href='delete.php' title='Deletar Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                echo "</td>";
+                                // echo "<td>";
+                                // echo "<a href='read.php' title='Ver Registro' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                // echo "</td>";
                                 echo "</tr>";
                             }
                             echo "</tbody>";
@@ -88,6 +105,7 @@
                     // Close connection
                     unset($pdo);
                     ?>
+                    <a href="delete.php" id="btn-deletar" class="btn btn-danger pull-right" onclick="showAlert()">Deletar Tudo</a> 
                 </div>
             </div>
         </div>
