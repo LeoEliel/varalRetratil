@@ -1,0 +1,27 @@
+/* css personalizado */
+.wrapper {
+    width: 650px;
+    margin: 0 auto;
+}
+
+.page-header h2 {
+    margin-top: 0;
+}
+
+table tr td:last-child a {
+    margin-right: 15px;
+}
+#btn-atualizar {
+    margin-right: 5px;
+}
+#btn-deletar {
+    margin-left: 5px;
+}
+#img-title{
+    height: 64px;
+    width: 64px;
+    margin-right: 10px;         
+}
+#titulo{
+    font-weight: bold;
+}
