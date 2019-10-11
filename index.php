@@ -29,12 +29,11 @@
                             // Attempt select query execution
                             $sql = "SELECT * FROM previsao";
                             if ($result = $pdo->query($sql)) {
-                                if ($result->rowCount() > 0) {
-                                    echo "<div class='col-md-12 col-sm-12 col-xs-12'>";
+                                if ($result->rowCount() > 0) {                                    
                                         echo "<table class='table table-bordered table-striped'>";
                                             echo "<thead>";
                                                     echo "<tr>";
-                                                        echo "<th>#</th>";
+                                                    // echo "<th>#</th>";
                                                         echo "<th>Data</th>";
                                                         echo "<th>Humidade Max</th>";
                                                         echo "<th>Humidade Min</th>";
@@ -45,7 +44,7 @@
                                             echo "<tbody>";
                                             while ($row = $result->fetch()) {
                                                 echo "<tr>";
-                                                    echo "<td>" . $row['id'] . "</td>";
+                                                    // echo "<td>" . $row['id'] . "</td>";
                                                     echo "<td>" . $row['dataPrevisao'] . "</td>";
                                                     echo "<td>" . $row['humiMax'] . "</td>";
                                                     echo "<td>" . $row['humiMin'] . "</td>";
@@ -57,8 +56,7 @@
                                                 echo "</tr>";
                                             }
                                             echo "</tbody>";
-                                        echo "</table>";
-                                    echo "</div>";
+                                        echo "</table>";                                    
                                     // Free result set
                                     unset($result);
                                 } else {
@@ -86,5 +84,5 @@
             }
         </script>
     </body>
-
+    
 </html>
