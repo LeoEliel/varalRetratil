@@ -84,12 +84,11 @@
                     } else {
                         echo "ERROR: Não foi possível executar a query SQL. " . $mysqli->error;
                     }
-
                     // Close connection
                     unset($pdo);
                     ?>
                     <a href="delete.php" id="btn-deletar" class="btn btn-danger btn-sm pull-right" onclick="showAlert()">Deletar Tudo</a> 
-                    <a href="update.php" id="btn-atualizar" class="btn btn-primary btn-sm pull-right">Atualizar</a>
+                    <a href="update.php" id="btn-atualizar" class="btn btn-success btn-sm pull-right">Atualizar</a>
                 </div>
             </div>
         </div>
