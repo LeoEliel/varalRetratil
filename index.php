@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Varal Retrátil</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="shortcut icon" href="img/lavanderia.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -38,8 +38,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Varal Retrátil - Dashboard</h2>
-                        <a href="update.php" id="btn-atualizar" class="btn btn-success pull-right">Atualizar</a>                                               
+                        <h2 class="pull-left title">Dashboard</h2>
                     </div>
                     <?php
                     // Include config file
@@ -54,9 +53,9 @@
                             echo "<tr>";
                             echo "<th>#</th>";
                             echo "<th>Data</th>";
-                            echo "<th>Humid Max</th>";
-                            echo "<th>Humid Min</th>";
-                            echo "<th>Chuva(%)</th>";
+                            echo "<th>Humidade Max</th>";
+                            echo "<th>Humidade Min</th>";
+                            echo "<th>Chuva (%)</th>";
                             echo "<th>Cidade</th>";
                             echo "</tr>";
                             echo "</thead>";
@@ -89,7 +88,8 @@
                     // Close connection
                     unset($pdo);
                     ?>
-                    <a href="delete.php" id="btn-deletar" class="btn btn-danger pull-right" onclick="showAlert()">Deletar Tudo</a> 
+                    <a href="delete.php" id="btn-deletar" class="btn btn-danger btn-sm pull-right" onclick="showAlert()">Deletar Tudo</a> 
+                    <a href="update.php" id="btn-atualizar" class="btn btn-primary btn-sm pull-right">Atualizar</a>
                 </div>
             </div>
         </div>

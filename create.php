@@ -17,7 +17,7 @@ $humiMin = $json["data"][0]["humidity"]["min"];
 // Probabiliade de chuva
 $chuvaProbab = trim($json["data"][0]["rain"]["probability"]);
 //cidade
-$cidade = $json["name"]." ".$json["state"]; 
+$cidade = $json["name"]." - ".$json["state"]; 
 
 // Prepare an insert statement
 $sql = "INSERT INTO previsao (dataPrevisao, humiMax, humiMin, chuvaProbab, cidade) VALUES (:dataPrevisao, :humiMax, :humiMin, :chuvaProbab, :cidade)";
