@@ -30,15 +30,24 @@
         #btn-deletar {
             margin-left: 5px;
         }
+        #img-title{
+            height: 64px;
+            width: 64px;
+            margin-right: 10px;         
+        }
+        #titulo{
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left title">Dashboard</h2>
+                        <img src="img/lavanderia.png" alt="imagem de título" id="img-title" class="pull-left img-fluid">
+                        <h1 id="titulo" class="pull-left title">Dashboard</h1>
                     </div>
                     <?php
                     // Include config file
