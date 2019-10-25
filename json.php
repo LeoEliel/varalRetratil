@@ -1,6 +1,6 @@
 <?php
 //url
-$url = "http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/5757/days/15?token=fcc72a6c209aa5e8b8d1e1954c00a0fd";
+$url = "http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/5757/days/15?token=d19bf4579db8d674b3c4b5f126704632";
 //  Initiate curl
 
 $ch = curl_init();
