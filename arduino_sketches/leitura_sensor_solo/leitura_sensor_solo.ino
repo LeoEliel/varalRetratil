@@ -21,6 +21,7 @@ void loop()
   valor_analogico = analogRead(pino_sinal_analogico);
  
   //Mostra o valor da porta analogica no serial monitor
+  Serial.print('\n');
   Serial.print("Leitura da Porta analogica: ");
   Serial.print(valor_analogico);
   delay(1000);
