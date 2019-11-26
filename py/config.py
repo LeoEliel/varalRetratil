@@ -30,4 +30,3 @@ except KeyboardInterrupt: # Ao abortar a execução do programa esta exception �
 except: #Caso seja um erro não especificado é importante fechar a porta serial para permitir comunicação futura
     serial.close()
 
-    
