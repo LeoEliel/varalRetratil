@@ -37,8 +37,8 @@ void loop()
     }
     if (python == 'D') {      
         digitalWrite(LED, HIGH);
-        digitalWrite(IN1, LOW);
-        digitalWrite(IN2, HIGH);      
+        digitalWrite(IN1, HIGH);
+        digitalWrite(IN2, LOW);      
         delay(5000);
         digitalWrite(IN1, LOW);
         digitalWrite(IN2, LOW);
