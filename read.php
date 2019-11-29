@@ -24,3 +24,4 @@ unset($result);
 // Close connection
 unset($pdo);
 ?>
+

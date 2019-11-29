@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 import pymysql
 import serial
 import time
@@ -31,14 +29,14 @@ def ligarMotor(x):
     if probabChuva >=50 and humidSensor >= b'512\r\n' and chuva is False:        
         serial.write(bytes("L",'utf-8'))
         print ("Chuva detectada! Sinal p/ LED e Motor: ATIVAR")  
-        time.sleep(60) 
+        time.sleep(60) #Qtd de tempo que o Python fica parado após detectar chuva para detecta-la novamente.
         chuva = True
     elif humidSensor < b'512\r\n' and chuva is True:
         print("Chuva não detectada. Sinal p/ LED e Motor: DESATIVAR")            
         serial.write(bytes("D",'utf-8'))
         chuva = False
-    time.sleep(5)
-    ligarMotor(chuva)
+    time.sleep(5) #Qtd de tempo para nova leitura da porta serial. Então o Python le o sensor de umidade do Solo a cada 5 segs
+    ligarMotor(chuva) #Função Recursiva aqui!
 
 serial = serial.Serial('COM3', 9600)
 chv = False
